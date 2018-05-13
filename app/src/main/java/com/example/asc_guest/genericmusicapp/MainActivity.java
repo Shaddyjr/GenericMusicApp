@@ -13,8 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mMusicPlayer = new MusicPlayer();
-        Log.v("main",mMusicPlayer.songs().get(0).getTitle());
-        Log.v("main",mMusicPlayer.artists().get(0).getName());
-        Log.v("main",mMusicPlayer.genres().get(0).getName());
+
     }
 }
