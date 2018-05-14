@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/singleSongContainer"
+    >
+
+    <LinearLayout
+        style="@style/singleSongContent"
+        >
+        <TextView
+            style="@style/songName"
+            tools:text="blah"
+            />
+        <TextView
+            style="@style/songArtist"
+            tools:text="blah"
+            />
+        <TextView
+            style="@style/songGenre"
+            tools:text="blah"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/singleSongPlay"
+        >
+
+        <Button
+            style="@style/songPlayButton"
+            tools:text="Play"
+            />
+        <TextView
+            style="@style/songDuration"
+            tools:text="1:45"
+            />
+    </LinearLayout>
+</LinearLayout>

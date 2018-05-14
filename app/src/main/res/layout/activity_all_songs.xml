@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AllSongsActivity"
+    style="@style/generic_activity_container"
+    >
+
+</android.support.v7.widget.RecyclerView>

@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ArtistActivity"
+            android:label="@string/artistActivity_name"
+            />
+        <activity
+            android:name=".GenreActivity"
+            android:label="@string/genreActivity_name"
+            />
+        <activity
+            android:name=".PlayingSongActivity"
+            android:label="@string/playingSongActivity_name"
+            />
+        <activity
+            android:name=".AllSongsActivity"
+            android:label="@string/allSongsActivity"
+            />
     </application>
 
 </manifest>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GenericMusicApp</string>
+    <string name="artistActivity_name">Songs by Artist</string>
+    <string name="genreActivity_name">Songs by Genre</string>
+    <string name="playingSongActivity_name">Currently Playing</string>
+    <string name="allSongsActivity">All Songs</string>
 </resources>
