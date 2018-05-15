@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView
+<ListView
+    android:id="@+id/artist_or_genre_activity"
     style="@style/generic_activity_container"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.v7.widget.RecyclerView>
+</ListView>

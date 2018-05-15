@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView
+<ListView
+    android:id="@+id/allSongsActivity"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".AllSongsActivity"
     style="@style/generic_activity_container"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</android.support.v7.widget.RecyclerView>
+</ListView>

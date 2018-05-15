@@ -48,6 +48,7 @@
     <style name="songPlayButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">@string/playButton</item>
     </style>
     <!--End of single song-->
 
@@ -59,6 +60,7 @@
         <item name="android:paddingRight">16dp</item>
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
+        <item name="android:orientation">vertical</item>
     </style>
     <!--End of activities-->
 </resources>

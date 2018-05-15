@@ -4,4 +4,10 @@
     <string name="genreActivity_name">Songs by Genre</string>
     <string name="playingSongActivity_name">Currently Playing</string>
     <string name="allSongsActivity">All Songs</string>
+
+    <string name="songArtist">Artist: %1$s</string>
+
+    <string name="songGenre">Genre: %1$s</string>
+
+    <string name="playButton">Play</string>
 </resources>

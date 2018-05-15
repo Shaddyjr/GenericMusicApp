@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/singleSong"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/singleSongContainer"
-    >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         style="@style/singleSongContent"
         >
         <TextView
+            android:id="@+id/songName"
             style="@style/songName"
             tools:text="blah"
             />
         <TextView
+            android:id="@+id/songArtist"
             style="@style/songArtist"
             tools:text="blah"
             />
         <TextView
+            android:id="@+id/songGenre"
             style="@style/songGenre"
             tools:text="blah"
             />
@@ -27,9 +31,9 @@
 
         <Button
             style="@style/songPlayButton"
-            tools:text="Play"
             />
         <TextView
+            android:id="@+id/songDuration"
             style="@style/songDuration"
             tools:text="1:45"
             />

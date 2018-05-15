@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Responsible for interfacing with songs.
@@ -20,7 +21,7 @@ public class Song {
      * @param genre genre song belongs to
      * @param title title of song
      */
-    public Song(String artist, double duration, String genre, String title){
+    Song(String artist, double duration, String genre, String title){
         this.title = title;
         this.duration = duration;
 
@@ -67,9 +68,9 @@ public class Song {
 
     /**
      * Returns the song's duration.
-     * @return double
+     * @return String
      */
-    public double getDuration() {
-        return duration;
+    public String getDuration() {
+        return String.format(Locale.US, "%.2f", duration/60);
     }
 }

@@ -3,4 +3,28 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="color0">#ff4340</color>
+    <color name="color1">#ff9c40</color>
+    <color name="color2">#ffe640</color>
+    <color name="color3">#acff40</color>
+    <color name="color4">#40ffe9</color>
+    <color name="color5">#406dff</color>
+    <color name="color6">#8640ff</color>
+    <color name="color7">#e940ff</color>
+    <color name="color8">#ff40c9</color>
+    <color name="color9">#e40721</color>
+
+    <integer-array name="rainbowColors">
+        <item>@color/color0</item>
+        <item>@color/color1</item>
+        <item>@color/color2</item>
+        <item>@color/color3</item>
+        <item>@color/color4</item>
+        <item>@color/color5</item>
+        <item>@color/color6</item>
+        <item>@color/color7</item>
+        <item>@color/color8</item>
+        <item>@color/color9</item>
+    </integer-array>
 </resources>
