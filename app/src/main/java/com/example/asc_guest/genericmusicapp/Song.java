@@ -1,12 +1,17 @@
 package com.example.asc_guest.genericmusicapp;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 /**
  * Responsible for interfacing with songs.
  */
-public class Song {
+public class Song implements Comparable{
     static private ArrayList<Song> all = new ArrayList<Song>();
 
     private String artist;
@@ -24,12 +29,8 @@ public class Song {
     Song(String artist, double duration, String genre, String title){
         this.title = title;
         this.duration = duration;
-
-        this.artist = artist;
-        Artist.create(artist);
-
-        this.genre = genre;
-        Genre.create(genre);
+        this.artist = Artist.createOrFind(artist, this).getName();
+        this.genre = Genre.createOrFind(genre, this).getName();
 
         all.add(this);
     }
@@ -39,6 +40,7 @@ public class Song {
      * @return ArrayList
      */
     public static ArrayList<Song> getAll() {
+        Collections.sort(all);
         return all;
     }
 
@@ -72,5 +74,10 @@ public class Song {
      */
     public String getDuration() {
         return String.format(Locale.US, "%.2f", duration/60);
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        return this.title.compareTo(((Song)o).getTitle());
     }
 }

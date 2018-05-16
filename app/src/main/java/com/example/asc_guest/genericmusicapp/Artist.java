@@ -1,11 +1,17 @@
 package com.example.asc_guest.genericmusicapp;
 
+import android.support.annotation.NonNull;
+
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
 /**
  * Responsible for interfacing with artists.
  */
-public class Artist{
+public class Artist implements Comparable{
     static private ArrayList<Artist> all = new ArrayList<Artist>();
+    static private HashMap<String,Integer> artistRecord = new HashMap();
 
     private String name;
     private ArrayList<Song> songs = new ArrayList<Song>();
@@ -14,9 +20,13 @@ public class Artist{
      * Constructor for artist.
      * @param name name of artist
      */
-    private Artist (String name){
+    private Artist (String name, Song song){
+        if(!artistRecord.containsKey(name)){
+            artistRecord.put(name,artistRecord.size());
+            all.add(this);
+        }
         this.name = name;
-        Artist.all.add(this);
+        this.songs.add(song);
     }
 
     /**
@@ -32,6 +42,7 @@ public class Artist{
      * @return ArrayList
      */
     public static ArrayList<Artist> getAll() {
+        Collections.sort(all);
         return all;
     }
 
@@ -40,27 +51,29 @@ public class Artist{
      * @param name name of artist
      * @return Artist
      */
-    public static Artist create(String name){
-        int index = Artist.findByName(name);
-        if(index > 0) {
-            return all.get(index);
+    public static Artist createOrFind(String name, Song song){
+        Artist artist;
+        if(!artistRecord.containsKey(name)){
+            artist = new Artist(name, song);
+        }else{
+            artist = findByName(name);
+            artist.songs.add(song);
         }
-        return new Artist(name);
+        return artist;
     }
 
+
     /**
-     * Returns index of artist in .all ArrayList.
-     * Returns -1 if not found.
+     * Finds the Artist by name
      * @param name name of artist
-     * @return int
+     * @return Artist
      */
-    private static int findByName(String name){
-        int l = all.size();
-        for(int i = 0; i < l ; i++){
-            if(all.get(i).name.equals(name)){
-                return i;
-            }
-        }
-        return -1;
+    private static Artist findByName(String name){
+        return all.get(artistRecord.get(name));
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        return this.name.compareTo(((Artist)o).getName());
     }
 }

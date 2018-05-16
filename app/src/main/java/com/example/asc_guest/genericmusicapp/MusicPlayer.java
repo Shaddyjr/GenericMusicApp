@@ -35,7 +35,7 @@ public class MusicPlayer {
      * Responsible for creating individual songs.
      * @see "https://think.cs.vt.edu/corgis/csv/music/music.html"
      */
-    public MusicPlayer(){
+     MusicPlayer(){
         new Song("Casual",218.93179,"hip hop","I Didn't Mean To");
         new Song("The Box Tops",148.03546,"blue-eyed soul","Soul Deep");
         new Song("Sonora Santanera",177.47546,"salsa","Amor De Cabaret");
