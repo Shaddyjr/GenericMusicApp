@@ -6,16 +6,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class AllSongsActivity extends AppCompatActivity {
-    MusicPlayer mMusicPlayer;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_songs);
 
-        mMusicPlayer = new MusicPlayer();
-
-        SongAdapter songAdapter = new SongAdapter(this, mMusicPlayer.songs());
+        SongAdapter songAdapter = new SongAdapter(this, MusicPlayer.songs());
 
         ListView singSongListView = findViewById(R.id.allSongsActivity);
 

@@ -11,7 +11,7 @@ public class MusicPlayer {
      * Returns the song ArrayList.
      * @return ArrayList
      */
-    public ArrayList<Song> songs(){
+    static public ArrayList<Song> songs(){
         return Song.getAll();
     }
 
@@ -19,7 +19,7 @@ public class MusicPlayer {
      * Returns the genre ArrayList.
      * @return ArrayList
      */
-    public ArrayList<Genre> genres(){
+    static public ArrayList<Genre> genres(){
         return Genre.getAll();
     }
 
@@ -27,7 +27,7 @@ public class MusicPlayer {
      * Returns the artist ArrayList.
      * @return ArrayList
      */
-    public ArrayList<Artist> artists(){
+    static public ArrayList<Artist> artists(){
         return Artist.getAll();
     }
 

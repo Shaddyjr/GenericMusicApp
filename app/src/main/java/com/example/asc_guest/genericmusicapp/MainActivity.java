@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         mByGenreTextView    = findViewById(R.id.byGenre);
         mRandomSongTextView = findViewById(R.id.randomSong);
 
+        new MusicPlayer(); // creates all songs
+
         mAllSongsTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

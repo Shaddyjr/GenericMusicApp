@@ -56,6 +56,14 @@ public class Genre implements Comparable {
     }
 
     /**
+     * Returns songs.
+     * @return ArrayList<Song>
+     */
+    public ArrayList<Song> getSongs() {
+        return songs;
+    }
+
+    /**
      * Returns all genres created.
      * @return String
      */

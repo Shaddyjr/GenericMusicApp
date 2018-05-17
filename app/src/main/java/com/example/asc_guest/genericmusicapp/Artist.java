@@ -38,6 +38,14 @@ public class Artist implements Comparable{
     }
 
     /**
+     * Returns songs.
+     * @return ArrayList<Song>
+     */
+    public ArrayList<Song> getSongs() {
+        return songs;
+    }
+
+    /**
      * Returns all artists created.
      * @return ArrayList
      */

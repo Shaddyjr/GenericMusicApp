@@ -12,9 +12,7 @@ public class GenreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist_and_genre);
 
-        mMusicPlayer = new MusicPlayer();
-
-        GenreAdapter genreAdapter = new GenreAdapter(this, mMusicPlayer.genres());
+        GenreAdapter genreAdapter = new GenreAdapter(this, MusicPlayer.genres());
 
         ListView artistOrGenreListView = findViewById(R.id.artist_or_genre_activity);
 
