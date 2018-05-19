@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,25 +10,22 @@ import java.util.HashMap;
 /**
  * Responsible for interfacing with genres.
  */
-public class Genre implements Comparable {
-    static private ArrayList<Genre> all = new ArrayList<Genre>();
-    static private HashMap<String,Integer> genreRecord = new HashMap();
-    private String name;
-    private ArrayList<Song> songs = new ArrayList<Song>();
+public class Genre extends SongGrouping{
+    static private ArrayList<Genre> all = new ArrayList<>();
+    static private HashMap<String,Integer> hashRecord = new HashMap();
 
     /**
      * Constructor for genre.
      * @param name name of genre
      */
     private Genre (String name, Song song){
-        if(!genreRecord.containsKey(name)){
-            genreRecord.put(name,genreRecord.size());
+        super(name, song);
+        if(!hashRecord.containsKey(name)){
+            hashRecord.put(name,hashRecord.size());
             all.add(this);
-        }else{
-            throw new Error("Genre already exists");
         }
-        this.name = capitalize(name);
-        this.songs.add(song);
+        setName(capitalize(name));
+        getSongs().add(song);
     }
 
     /**
@@ -43,24 +41,7 @@ public class Genre implements Comparable {
                 array[i+1]=Character.toUpperCase(array[i+1]);
             }
         }
-
         return new String(array);
-    }
-
-    /**
-     * Returns name of genre.
-     * @return String
-     */
-    public String getName(){
-        return name;
-    }
-
-    /**
-     * Returns songs.
-     * @return ArrayList<Song>
-     */
-    public ArrayList<Song> getSongs() {
-        return songs;
     }
 
     /**
@@ -73,32 +54,33 @@ public class Genre implements Comparable {
     }
 
     /**
-     * Finds the Genre by name
-     * @param name name of genre
-     * @return Genre
-     */
-    private static Genre findByName(String name){
-        return all.get(genreRecord.get(name));
-    }
-
-    /**
      * Will create genre, if it doesn't already exist.
      * @param name name of genre
      * @return Genre
      */
     public static Genre createOrFind(String name, Song song){
         Genre genre;
-        if(!genreRecord.containsKey(name)) {
+        if(!hashRecord.containsKey(name)) {
             genre = new Genre(name, song);
         }else{
+            Log.v("blah",name);
             genre = findByName(name);
-            genre.songs.add(song);
+            genre.getSongs().add(song);
         }
         return genre;
     }
 
+    /**
+     * Finds the Genre by name
+     * @param name name of genre
+     * @return Genre
+     */
+    private static Genre findByName(String name){
+        return all.get(hashRecord.get(name));
+    }
+
     @Override
     public int compareTo(@NonNull Object o) {
-        return this.name.compareTo(((Genre)o).getName());
+        return getName().compareTo(((Genre)o).getName());
     }
 }

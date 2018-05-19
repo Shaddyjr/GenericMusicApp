@@ -9,40 +9,22 @@ import java.util.HashMap;
 /**
  * Responsible for interfacing with artists.
  */
-public class Artist implements Comparable{
-    static private ArrayList<Artist> all = new ArrayList<Artist>();
-    static private HashMap<String,Integer> artistRecord = new HashMap();
-
-    private String name;
-    private ArrayList<Song> songs = new ArrayList<Song>();
+public class Artist extends SongGrouping{
+    static private ArrayList<Artist> all = new ArrayList<>();
+    static private HashMap<String,Integer> hashRecord = new HashMap();
 
     /**
      * Constructor for artist.
      * @param name name of artist
      */
     private Artist (String name, Song song){
-        if(!artistRecord.containsKey(name)){
-            artistRecord.put(name,artistRecord.size());
+        super(name, song);
+        if(!hashRecord.containsKey(name)){
+            hashRecord.put(name,hashRecord.size());
             all.add(this);
         }
-        this.name = name;
-        this.songs.add(song);
-    }
-
-    /**
-     * Returns name of artist.
-     * @return String
-     */
-    public String getName(){
-        return name;
-    }
-
-    /**
-     * Returns songs.
-     * @return ArrayList<Song>
-     */
-    public ArrayList<Song> getSongs() {
-        return songs;
+        setName(name);
+        getSongs().add(song);
     }
 
     /**
@@ -54,22 +36,21 @@ public class Artist implements Comparable{
         return all;
     }
 
-    /**
-     * Will create artist, if it doesn't already exist.
-     * @param name name of artist
-     * @return Artist
-     */
-    public static Artist createOrFind(String name, Song song){
-        Artist artist;
-        if(!artistRecord.containsKey(name)){
-            artist = new Artist(name, song);
-        }else{
-            artist = findByName(name);
-            artist.songs.add(song);
-        }
-        return artist;
-    }
-
+     /**
+      * Will create artist, if it doesn't already exist.
+      * @param name name of artist
+      * @return Artist
+      */
+     public static Artist createOrFind(String name, Song song){
+         Artist artist;
+         if(!hashRecord.containsKey(name)){
+             artist = new Artist(name, song);
+         }else{
+             artist = findByName(name);
+             artist.getSongs().add(song);
+         }
+         return artist;
+     }
 
     /**
      * Finds the Artist by name
@@ -77,11 +58,11 @@ public class Artist implements Comparable{
      * @return Artist
      */
     private static Artist findByName(String name){
-        return all.get(artistRecord.get(name));
+        return all.get(hashRecord.get(name));
     }
 
     @Override
     public int compareTo(@NonNull Object o) {
-        return this.name.compareTo(((Artist)o).getName());
+        return getName().compareTo(((Artist)o).getName());
     }
 }
