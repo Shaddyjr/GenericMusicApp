@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 public class GenreActivity extends AppCompatActivity {
-    MusicPlayer mMusicPlayer;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

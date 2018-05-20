@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         mRandomSongTextView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, PlayingSongActivity.class);
+                String songName = Song.randomSongName();
+                intent.putExtra("name",songName);
                 startActivity(new Intent(MainActivity.this, PlayingSongActivity.class));
             }
         });

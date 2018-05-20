@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,8 +15,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ArtistAdapter extends ArrayAdapter<Artist> {
+    Activity mActivity;
     ArtistAdapter(Activity context, ArrayList<Artist> artists){
         super(context, 0, artists);
+        mActivity = context;
     }
 
     @NonNull
@@ -39,7 +42,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
         LayoutInflater inflater = LayoutInflater.from(songContainer.getContext());
 
         // adding children
-        for(Song song : artistObj.getSongs()){
+        for(final Song song : artistObj.getSongs()){
             View child = inflater.inflate(R.layout.single_song, songContainer, false);
 
             TextView artist = child.findViewById(R.id.songArtist);
@@ -58,6 +61,15 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
 
             Button play = child.findViewById(R.id.songPlayButton);
             setBackgroundColor(play, position);
+
+            play.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(mActivity, PlayingSongActivity.class);
+                    intent.putExtra("name",song.getTitle());
+                    mActivity.startActivity(intent);
+                }
+            });
 
             setSongBackground(child, position);
             songContainer.addView(child);

@@ -17,8 +17,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class GenreAdapter extends ArrayAdapter<Genre> {
+    private Activity mActivity;
+
     GenreAdapter(Activity context, ArrayList<Genre> genres){
         super(context, 0, genres);
+        mActivity = context;
     }
 
     @NonNull
@@ -42,7 +45,7 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
         LayoutInflater inflater = LayoutInflater.from(songContainer.getContext());
 
         // adding children
-        for(Song song : genreObj.getSongs()){
+        for(final Song song : genreObj.getSongs()){
             View child = inflater.inflate(R.layout.single_song, songContainer, false);
 
             TextView artist = child.findViewById(R.id.songArtist);
@@ -61,6 +64,15 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
 
             Button play = child.findViewById(R.id.songPlayButton);
             setBackgroundColor(play, position);
+
+            play.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(mActivity, PlayingSongActivity.class);
+                    intent.putExtra("name",song.getTitle());
+                    mActivity.startActivity(intent);
+                }
+            });
 
             setSongBackground(child, position);
             songContainer.addView(child);

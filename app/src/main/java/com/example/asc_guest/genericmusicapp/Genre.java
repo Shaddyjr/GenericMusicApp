@@ -1,7 +1,6 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,7 +62,6 @@ public class Genre extends SongGrouping{
         if(!hashRecord.containsKey(name)) {
             genre = new Genre(name, song);
         }else{
-            Log.v("blah",name);
             genre = findByName(name);
             genre.getSongs().add(song);
         }
