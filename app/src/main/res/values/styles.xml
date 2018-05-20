@@ -13,6 +13,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
     </style>
 
     <style name="singleSongContent">
@@ -20,6 +21,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
         <item name="android:layout_weight">5</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="singleSongPlay">
@@ -27,30 +29,65 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">vertical</item>
         <item name="android:layout_weight">2</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="songName">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
     </style>
     <style name="songArtist">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
     </style>
     <style name="songGenre">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
     </style>
     <style name="songDuration">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
     </style>
     <style name="songPlayButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/playButton</item>
+        <item name="android:textColor">@color/lightText</item>
     </style>
     <!--End of single song-->
+
+    <!--Artist or Genre-->
+    <style name="generic_artist_or_genre_container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="singleArtistOrGenreName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="singleArtistOrGenreSongContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--End of Artist or Genre-->
 
     <!--Activities -->
     <style name="generic_activity_container">

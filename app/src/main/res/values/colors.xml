@@ -3,6 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="lightText">#FFFFFF</color>
 
     <color name="color0">#ff4340</color>
     <color name="color1">#ff9c40</color>
@@ -26,5 +27,29 @@
         <item>@color/color7</item>
         <item>@color/color8</item>
         <item>@color/color9</item>
+    </integer-array>
+
+    <color name="colorL0">#ef8886</color>
+    <color name="colorL1">#f2c092</color>
+    <color name="colorL2">#f6eb9f</color>
+    <color name="colorL3">#d4f8a6</color>
+    <color name="colorL4">#b0fff6</color>
+    <color name="colorL5">#95adfb</color>
+    <color name="colorL6">#c5a3ff</color>
+    <color name="colorL7">#f4a0ff</color>
+    <color name="colorL8">#fa8ddb</color>
+    <color name="colorL9">#d77a85</color>
+
+    <integer-array name="rainbowColorsLight">
+        <item>@color/colorL0</item>
+        <item>@color/colorL1</item>
+        <item>@color/colorL2</item>
+        <item>@color/colorL3</item>
+        <item>@color/colorL4</item>
+        <item>@color/colorL5</item>
+        <item>@color/colorL6</item>
+        <item>@color/colorL7</item>
+        <item>@color/colorL8</item>
+        <item>@color/colorL9</item>
     </integer-array>
 </resources>

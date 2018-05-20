@@ -1,12 +1,15 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,17 +28,21 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
             genreView = LayoutInflater.from(getContext()).inflate(R.layout.artist_or_genre, parent, false);
         }
 
-        setBackgroundColor(genreView, position);
-
         Genre genreObj = getItem(position);
 
         TextView name = genreView.findViewById(R.id.name);
         name.setText(genreObj.getName());
 
         LinearLayout songContainer = genreView.findViewById(R.id.songs);
+
+        // need to clear out any previous views
+        songContainer.removeAllViews();
+
+        LayoutInflater inflater = LayoutInflater.from(songContainer.getContext());
+
         // adding children
         for(Song song : genreObj.getSongs()){
-            View child = View.inflate(getContext(),R.layout.single_song,null);
+            View child = inflater.inflate(R.layout.single_song, songContainer, false);
 
             TextView artist = child.findViewById(R.id.songArtist);
             String artistString = getContext().getString(R.string.songArtist, song.getArtist());
@@ -51,14 +58,23 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
             TextView duration = child.findViewById(R.id.songDuration);
             duration.setText(song.getDuration());
 
+            Button play = child.findViewById(R.id.songPlayButton);
+            setBackgroundColor(play, position);
+
+            setSongBackground(child, position);
             songContainer.addView(child);
         }
+        setBackgroundColor(genreView, position);
         return genreView;
     }
 
     private void setBackgroundColor(View v, int position){
         int[] rainbowColors = getContext().getResources().getIntArray(R.array.rainbowColors);
-        int randomAndroidColor = rainbowColors[position % rainbowColors.length];
-        v.setBackgroundColor(randomAndroidColor);
+        v.setBackgroundColor(rainbowColors[position % rainbowColors.length]);
+    }
+
+    private void setSongBackground(View v, int position){
+        int[] rainbowColorsLight = getContext().getResources().getIntArray(R.array.rainbowColorsLight);
+        v.setBackgroundColor(rainbowColorsLight[position % rainbowColorsLight.length]);
     }
 }

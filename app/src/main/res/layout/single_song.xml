@@ -3,7 +3,8 @@
     android:id="@+id/singleSong"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/singleSongContainer"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <LinearLayout
         style="@style/singleSongContent"
@@ -30,6 +31,7 @@
         >
 
         <Button
+            android:id="@+id/songPlayButton"
             style="@style/songPlayButton"
             />
         <TextView

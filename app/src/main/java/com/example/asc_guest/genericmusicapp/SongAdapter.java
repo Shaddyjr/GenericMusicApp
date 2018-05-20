@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -29,8 +31,6 @@ public class SongAdapter extends ArrayAdapter<Song> {
             singleSongView = LayoutInflater.from(getContext()).inflate(R.layout.single_song, parent, false);
         }
 
-        setBackgroundColor(singleSongView, position);
-
         // after view recycled or inflated, securing object at position
         Song songObj = getItem(position);
 
@@ -49,12 +49,21 @@ public class SongAdapter extends ArrayAdapter<Song> {
         TextView duration = singleSongView.findViewById(R.id.songDuration);
         duration.setText(songObj.getDuration());
 
+        Button play = singleSongView.findViewById(R.id.songPlayButton);
+        setLightBackground(play, position);
+
+        setBackgroundColor(singleSongView, position);
         return singleSongView;
     }
 
     private void setBackgroundColor(View v, int position){
         int[] rainbowColors = getContext().getResources().getIntArray(R.array.rainbowColors);
-        int randomAndroidColor = rainbowColors[position % rainbowColors.length];
-        v.setBackgroundColor(randomAndroidColor);
+        v.setBackgroundColor(rainbowColors[position % rainbowColors.length]);
+    }
+
+    private void setLightBackground(Button b, int position){
+        int[] rainbowColorsLight = getContext().getResources().getIntArray(R.array.rainbowColorsLight);
+        b.setBackgroundColor(rainbowColorsLight[position % rainbowColorsLight.length]);
+        b.setTextColor(getContext().getResources().getColor(R.color.colorPrimaryDark));
     }
 }
