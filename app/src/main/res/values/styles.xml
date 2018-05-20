@@ -8,6 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--Main Activity-->
+    <style name="mainContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:columnCount">2</item>
+        <item name="android:rowCount">2</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="centerBlock">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">fill_horizontal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/lightText</item>
+    </style>
+    <!--End of Main Activity-->
+
     <!--Single song-->
     <style name="singleSongContainer">
         <item name="android:layout_width">match_parent</item>

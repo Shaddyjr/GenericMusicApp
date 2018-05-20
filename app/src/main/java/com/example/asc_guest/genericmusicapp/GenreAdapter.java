@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
