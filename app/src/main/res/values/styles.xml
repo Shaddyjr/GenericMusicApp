@@ -111,6 +111,50 @@
 
     <!--End of Artist or Genre-->
 
+    <!--Currently Playing-->
+    <style name="currentlyPlayingImg">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">300dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="singleSongContent.currentlyPlaying">
+        <item name="android:layout_below">@+id/mainImg</item>
+    </style>
+
+    <style name="songArtist.centered">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="songGenre.centered">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="songName.centered">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:progress">25</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="currentlyPlayingTime">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_above">@+id/progBar</item>
+    </style>
+
+    <style name="currentlyPlayingTime.duration">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+    <!--End of Currently Playing-->
+
     <!--Activities -->
     <style name="generic_activity_container">
         <item name="android:layout_width">match_parent</item>

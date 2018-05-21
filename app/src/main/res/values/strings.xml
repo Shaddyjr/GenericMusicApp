@@ -10,4 +10,7 @@
     <string name="songGenre">Genre: %1$s</string>
 
     <string name="playButton">Play</string>
+
+    <string name="blank">{Blank}</string>
+    <string name="defaultTime">0:34</string>
 </resources>

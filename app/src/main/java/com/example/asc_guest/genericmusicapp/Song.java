@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -87,7 +88,9 @@ public class Song implements Comparable{
      * @return Song
      */
     public static Song findByName(String name){
-        return all.get(hashRecord.get(name));
+        Log.v("blah", name);
+        Log.v("blah2",""+hashRecord.get(name));
+        return all.get(hashRecord.get(name)-1);
     }
 
     /**

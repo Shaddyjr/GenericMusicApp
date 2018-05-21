@@ -1,6 +1,7 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,8 +17,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class SongAdapter extends ArrayAdapter<Song> {
+    Activity mActivity;
     SongAdapter(Activity context, ArrayList<Song> songs){
         super(context, 0, songs);
+        mActivity = context;
     }
 
     @NonNull
@@ -32,25 +35,35 @@ public class SongAdapter extends ArrayAdapter<Song> {
         }
 
         // after view recycled or inflated, securing object at position
-        Song songObj = getItem(position);
+        final Song song = getItem(position);
 
         // now, filling in view with information from the object
         TextView artist = singleSongView.findViewById(R.id.songArtist);
-        String artistString = getContext().getString(R.string.songArtist, songObj.getArtist());
+        String artistString = getContext().getString(R.string.songArtist, song.getArtist());
         artist.setText(artistString);
 
         TextView genre = singleSongView.findViewById(R.id.songGenre);
-        String genreString = getContext().getString(R.string.songGenre, songObj.getGenre());
+        String genreString = getContext().getString(R.string.songGenre, song.getGenre());
         genre.setText(genreString);
 
         TextView title = singleSongView.findViewById(R.id.songName);
-        title.setText(songObj.getTitle());
+        title.setText(song.getTitle());
 
         TextView duration = singleSongView.findViewById(R.id.songDuration);
-        duration.setText(songObj.getDuration());
+        duration.setText(song.getDuration());
 
         Button play = singleSongView.findViewById(R.id.songPlayButton);
         setLightBackground(play, position);
+
+        play.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(mActivity, PlayingSongActivity.class);
+                intent.putExtra("name",song.getTitle());
+                mActivity.startActivity(intent);
+            }
+        });
+
 
         setBackgroundColor(singleSongView, position);
         return singleSongView;

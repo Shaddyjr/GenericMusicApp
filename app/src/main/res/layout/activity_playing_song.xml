@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PlayingSongActivity">
+    style="@style/generic_activity_container"
+    >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:id="@+id/mainImg"
+        style="@style/currentlyPlayingImg"
+        />
 
+    <LinearLayout
+        style="@style/singleSongContent.currentlyPlaying"
+        >
+        <TextView
+            android:id="@+id/songName"
+            style="@style/songName.centered"
+            />
+        <TextView
+            android:id="@+id/songArtist"
+            style="@style/songArtist.centered"
+            />
+        <TextView
+            android:id="@+id/songGenre"
+            style="@style/songGenre.centered"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/currentTime"
+        style="@style/currentlyPlayingTime"
+        android:text="@string/defaultTime"
+        />
+
+    <TextView
+        android:id="@+id/songDuration"
+        style="@style/currentlyPlayingTime.duration"
+        />
+    <ProgressBar
+        android:id="@+id/progBar"
+        style="@style/customProgressBar"
+        />
 
 </RelativeLayout>
