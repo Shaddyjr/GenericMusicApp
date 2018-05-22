@@ -25,7 +25,7 @@
     <TextView
         android:id="@+id/randomSong"
         style="@style/centerBlock"
-        android:text="@string/playingSongActivity_name"
+        android:text="@string/randomSong"
         />
 
 </GridLayout>

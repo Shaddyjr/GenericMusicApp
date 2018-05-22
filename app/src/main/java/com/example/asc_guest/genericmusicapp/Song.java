@@ -1,7 +1,6 @@
 package com.example.asc_guest.genericmusicapp;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,7 +15,6 @@ import java.util.Random;
  */
 public class Song implements Comparable{
     static private ArrayList<Song> all = new ArrayList<>();
-    static private HashMap<String,Integer> hashRecord = new HashMap();
 
     private String artist;
     private String genre;
@@ -31,14 +29,11 @@ public class Song implements Comparable{
      * @param title title of song
      */
     Song(String artist, double duration, String genre, String title){
-        if(!hashRecord.containsKey(title)){
-            hashRecord.put(title,hashRecord.size());
-            all.add(this);
-            this.title = title;
-            this.duration = duration;
-            this.artist = Artist.createOrFind(artist, this).getName();
-            this.genre = Genre.createOrFind(genre, this).getName();
-        }
+        this.title = title;
+        this.duration = duration;
+        this.artist = Artist.createOrFind(artist, this).getName();
+        this.genre = Genre.createOrFind(genre, this).getName();
+        all.add(this);
     }
 
     /**
@@ -85,12 +80,16 @@ public class Song implements Comparable{
     /**
      * Returns song found by name.
      * @param name name of song
+     * @throws Error when song not found
      * @return Song
      */
     public static Song findByName(String name){
-        Log.v("blah", name);
-        Log.v("blah2",""+hashRecord.get(name));
-        return all.get(hashRecord.get(name)-1);
+        for(Song song: all){
+            if(song.getTitle().equals(name)){
+                return song;
+            }
+        }
+        throw new Error("Name not found: " + name);
     }
 
     /**
@@ -98,7 +97,7 @@ public class Song implements Comparable{
      * @return String
      */
     public static String randomSongName(){
-        return new ArrayList<>(hashRecord.keySet()).get(new Random().nextInt(hashRecord.size()));
+        return all.get(new Random().nextInt(all.size())).getTitle();
     }
     @Override
     public int compareTo(@NonNull Object o) {
