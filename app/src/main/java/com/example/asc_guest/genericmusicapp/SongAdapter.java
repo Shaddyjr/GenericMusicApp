@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class SongAdapter extends ArrayAdapter<Song> {
-    Activity mActivity;
+    private Activity mActivity;
     SongAdapter(Activity context, ArrayList<Song> songs){
         super(context, 0, songs);
         mActivity = context;
@@ -25,11 +25,10 @@ public class SongAdapter extends ArrayAdapter<Song> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View singleSongView, @NonNull ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         // this will be the view that get's modified and populated with information from object at
         // ArrayList position
-        View singleSongView = convertView;
         if(singleSongView == null) {
             singleSongView = LayoutInflater.from(getContext()).inflate(R.layout.single_song, parent, false);
         }

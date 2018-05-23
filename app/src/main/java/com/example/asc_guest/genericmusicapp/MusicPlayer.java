@@ -189,7 +189,7 @@ public class MusicPlayer {
         new Song("Schizoid",166.00771,"breakcore","Grim Prospects (Version 2 Remix)");
         new Song("Toni Braxton Featuring Shaggy",219.01016,"dance pop","Christmas In Jamaica");
         new Song("Perrey And Kingsley",127.9473,"easy listening","Gossippo Perpetuo");
-        new Song("Sven Tasnadi",570.90567,"tech house",",2190 Dias Contigo");
+        new Song("Sven Tasnadi",570.90567,"tech house","2190 Dias Contigo");
         new Song("Eddie",230.00771,"frevo","No Control");
         new Song("Enthroned",240.74404,"black metal","The Vitalized Shell");
         new Song("Suzanne Ciani",192.20853,"meditation","Mozart");
@@ -219,7 +219,7 @@ public class MusicPlayer {
         new Song("Jim Chappell",263.94077,"chamber jazz","Still");
         new Song("Ladybug",341.36771,"dancehall","Snapshot");
         new Song("Bandido",333.13914,"hard house","End Of The Road (Head Horny's Remix)");
-        new Song("Brixx",349.12608,"rap",",7 Miles");
+        new Song("Brixx",349.12608,"rap","7 Miles");
         new Song("Nine Inch Nails",168.56771,"industrial metal","The Frail");
         new Song("Susana Seivane",350.71955,"gaita","Para Milladoiro");
         new Song("Leland Martin",175.62077,"honky tonk","Stone Cold Fingers (Bonus Track)");
@@ -276,7 +276,7 @@ public class MusicPlayer {
         new Song("Rise Against",218.8273,"hardcore punk","Amber Changing");
         new Song("Ultraviolence",303.04608,"gabba","Murder Academy");
         new Song("Korn",224.522,"rap metal","Hey Daddy");
-        new Song("Sir Neville Marriner",315.27138,"requiem",",4 Sea Interludes Op. 33a: Storm");
+        new Song("Sir Neville Marriner",315.27138,"requiem","4 Sea Interludes Op. 33a: Storm");
         new Song("Agnes",275.06893,"europop","I Need You Now");
         new Song("James Horner",191.81669,"rock","Atmosphere Station");
         new Song("Tantric",177.24036,"post-grunge","Walk Away");
@@ -482,7 +482,7 @@ public class MusicPlayer {
         new Song("Rodney O & Joe Cooley",217.41669,"miami bass","U Don't Hear Me Tho' (Street Mix)");
         new Song("Boots Randolph",150.20363,"instrumental rock","Lonely Street");
         new Song("Jackson United",204.93016,"surf music","Undertow");
-        new Song("The Cosmosamatics",515.97016,"free jazz",",12 Seasons of Love");
+        new Song("The Cosmosamatics",515.97016,"free jazz","12 Seasons of Love");
         new Song("Lili Ivanova",253.70077,"pop folk","Pak shte te obicham");
         new Song("Wailing Souls",204.85179,"roots reggae","Old Broom");
         new Song("Furry Lewis",171.49342,"country blues","Good Looking Girl Blues");

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ArtistAdapter extends ArrayAdapter<Artist> {
-    Activity mActivity;
+    private Activity mActivity;
     ArtistAdapter(Activity context, ArrayList<Artist> artists){
         super(context, 0, artists);
         mActivity = context;
@@ -23,9 +23,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
-        View artistView = convertView;
+    public View getView(int position, @Nullable View artistView, @NonNull ViewGroup parent) {
         if(artistView == null) {
             artistView = LayoutInflater.from(getContext()).inflate(R.layout.artist_or_genre, parent, false);
         }

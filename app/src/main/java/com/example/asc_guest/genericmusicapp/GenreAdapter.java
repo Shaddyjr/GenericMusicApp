@@ -26,8 +26,7 @@ public class GenreAdapter extends ArrayAdapter<Genre> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View genreView = convertView;
+    public View getView(int position, @Nullable View genreView, @NonNull ViewGroup parent) {
         if(genreView == null) {
             genreView = LayoutInflater.from(getContext()).inflate(R.layout.artist_or_genre, parent, false);
         }
